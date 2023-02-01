@@ -5,47 +5,47 @@ date: "2023-02-01"
 output: html_document
 ---
 # Exercise 1: 
-Find: [ \t]{2,}
-Replace with:,
+```Find: [ \t]{2,}
+Replace with:,```
 
 In this way we are looking for two or more space tabs, and replacing them with a comma (,)
 
 # Exercise 2: 
-Find: (\w*\s*), (\w*\s*), (.*)
-Replace with: \2 \1 \(\3\)
+```Find: (\w*\s*), (\w*\s*), (.*)
+Replace with: \2 \1 \(\3\)```
 
 In this way we are saying that there are three objects separated by parenthesis, first one is zero or more consecutive characters and spaces, than there is a comma, another object like the one before (that would be our object number 2) and then everything then all the rest would be object number 3. With the replace function, we are changing the positions of the first 2 objects, separating them just with a space, and finally putting in parenthesis our third object (that would be the university name). 
 
 # Exercise 3:
-Find:mp3 
-Replace with:mp3\r
+```Find:mp3 
+Replace with:mp3\r```
 
 Because we want to break the line after the mp3 word 
 
 # Exercise 4: 
 
-Find: (\d{4}) ((\w*\s*)*)
-Replace with: \2\_\1
+```Find: (\d{4}) ((\w*\s*)*)
+Replace with: \2\_\1```
 
 Because we want to change the order, we create the 2 objects, first one numbers made of 4 digits, and the second is a word with a space and everything after that. We add underscore between them. 
 
 # Exercise 5: 
 
-Find:(\w)\w+,(\w+),(\d*.\d*),(\d*)
-Replace with:\1_\2,\4
+```Find:(\w)\w+,(\w+),(\d*.\d*),(\d*)
+Replace with:\1_\2,\4```
 
 We are creating again objects, the first object is just one letter, out of it there are one or more consecutive word characters, and then the second object is composed by other consecutive word characters, and then the third object is composed by digits of number, point, and other numbers. The fourth object is composed by other consecutive number digits. Then, we change the orders, adding an underscore and a comma. 
 
 # Exercise 6 
 
-Find:(\w)\w+,(\w{4})\w+,(\d*.\d*),(\d*)
-Replace with:\1_\2,\4
+```Find:(\w)\w+,(\w{4})\w+,(\d*.\d*),(\d*)
+Replace with:\1_\2,\4```
 
 The same as before, but selecting just the first 4 letters of the second object. 
 
 # Exercise 7 
 
-Find:(\w{3})\w+,(\w{3})\w+,(\d*.\d*),(\d*)
-Replace with:\1\2, \4, \3
+```Find:(\w{3})\w+,(\w{3})\w+,(\d*.\d*),(\d*)
+Replace with:\1\2, \4, \3```
 
 As before, but we just change the order of the last objects, and take the first 3 letters of the first 2 objects. 
