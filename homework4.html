@@ -11,9 +11,9 @@
 
 <meta name="author" content="Ilaria Coero Borga" />
 
-<meta name="date" content="2023-01-25" />
+<meta name="date" content="2023-02-08" />
 
-<title>CompBio381</title>
+<title>homework4</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -356,14 +356,85 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">CompBio381</h1>
+<h1 class="title toc-ignore">homework4</h1>
 <h4 class="author">Ilaria Coero Borga</h4>
-<h4 class="date">2023-01-25</h4>
+<h4 class="date">2023-02-08</h4>
 
 </div>
 
 
-<p><a href="homework2.html">homework2</a> <a href="homework3.html">homework3</a> <a href="homework4.html">homework4</a> ## R Markdown</p>
+<div id="first-exercise" class="section level1">
+<h1>First exercise</h1>
+<pre><code>x&lt;-1.1
+a&lt;-2.2
+b&lt;-3.3
+z&lt;-(x^(a^b))
+print(z)
+z&lt;-((x^a)^b)
+print(z)
+z&lt;-(3*x^3+2*x^2+1)
+print(z)</code></pre>
+</div>
+<div id="second-exercise" class="section level1">
+<h1>Second exercise</h1>
+<pre><code>z&lt;-c(seq(1,8),seq(7,1))
+print(z)
+
+#or also
+
+z&lt;-rep(1:8,2)
+print(z)
+
+y&lt;-rep(1:5,c(1,2,3,4,5))
+#telling it to repeat for all these times using concatenate function
+print(y)
+
+s&lt;-rep(5:1,c(1,2,3,4,5))
+print(s)
+# same here </code></pre>
+</div>
+<div id="third-exercise" class="section level1">
+<h1>Third exercise</h1>
+<pre><code>x&lt;-runif(2,min=0,max=10)
+set.seed(0)
+print(x)
+r&lt;-((x[1]^2+x[2]^2)^1/2)
+print(r)
+q&lt;-atan(x[2]/x[1])
+print(q)
+#polar coordinates (r,q) --&gt; (43.72804,0.2878715)</code></pre>
+</div>
+<div id="fourth-exercise" class="section level1">
+<h1>Fourth exercise</h1>
+<pre><code>queue &lt;- c(&quot;sheep&quot;, &quot;fox&quot;, &quot;owl&quot;, &quot;ant&quot;)
+queue&lt;-append(queue, &quot;serpent&quot;)
+print(queue)
+queue&lt;-c(queue[2:5]) #to remove the first animal that entered the boat
+print(queue)
+queue&lt;-c(&quot;donkey&quot;,queue)
+print(queue)
+#now we have also a donkey on the boat 
+queue&lt;-c(queue[1:4])
+print(queue)
+#no more serpent
+queue&lt;-c(queue[1],queue[2],queue[4])
+print(queue)
+#no more owl
+queue&lt;-c(queue[1:2],&quot;aphid&quot;,&quot;ant&quot;) #adding aphid in 3rd position
+print(queue)
+which(queue == &quot;aphid&quot;)
+#to know where aphid is </code></pre>
+</div>
+<div id="fifth-exercise" class="section level1">
+<h1>Fifth exercise</h1>
+<pre><code>for (x in 1:100) 
+  if(! x%%7 == 0)
+    if(! x%%2 == 0)
+      if(! x%%3 == 0)
+    print(x)
+
+#to be able to have a list of numbers from 1 to 100 NOT divisible for 2,3 or 7 </code></pre>
+</div>
 
 
 
