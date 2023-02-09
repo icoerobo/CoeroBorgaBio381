@@ -1,5 +1,5 @@
 ---
-title: "homework4"
+title: "Homework4"
 author: "Ilaria Coero Borga"
 date: "2023-02-08"
 output: html_document
@@ -71,13 +71,11 @@ which(queue == "aphid")
 ```
 # Fifth exercise 
 ```
-for (x in 1:100) 
-  if(! x%%7 == 0)
-    if(! x%%2 == 0)
-      if(! x%%3 == 0)
-    print(x)
+x<-seq(1:100)
+vec<-which(! x%%2== 0 & ! x%%3== 0 & ! x%%7==0) #to be able to have a list of numbers from 1 to 100 NOT divisible for 2,3 or 7 
+print(vec) #to see if it's correct
 
-#to be able to have a list of numbers from 1 to 100 NOT divisible for 2,3 or 7 
+
 ```
 
 

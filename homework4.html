@@ -13,7 +13,7 @@
 
 <meta name="date" content="2023-02-08" />
 
-<title>homework4</title>
+<title>Homework4</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -356,7 +356,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">homework4</h1>
+<h1 class="title toc-ignore">Homework4</h1>
 <h4 class="author">Ilaria Coero Borga</h4>
 <h4 class="date">2023-02-08</h4>
 
@@ -427,13 +427,11 @@ which(queue == &quot;aphid&quot;)
 </div>
 <div id="fifth-exercise" class="section level1">
 <h1>Fifth exercise</h1>
-<pre><code>for (x in 1:100) 
-  if(! x%%7 == 0)
-    if(! x%%2 == 0)
-      if(! x%%3 == 0)
-    print(x)
+<pre><code>x&lt;-seq(1:100)
+vec&lt;-which(! x%%2== 0 &amp; ! x%%3== 0 &amp; ! x%%7==0) #to be able to have a list of numbers from 1 to 100 NOT divisible for 2,3 or 7 
+print(vec) #to see if it&#39;s correct
 
-#to be able to have a list of numbers from 1 to 100 NOT divisible for 2,3 or 7 </code></pre>
+</code></pre>
 </div>
 
 
