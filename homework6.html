@@ -363,28 +363,36 @@ display: none;
 </div>
 
 
+<p>Exercise 1</p>
 <pre><code>library(tidyverse)
 library(dplyr)
 data(iris)
 class(iris) 
 head(iris)
-iris1&lt;-filter(iris, Species==c(&quot;virginica&quot;, &quot;versicolor&quot;)&amp;Sepal.Length&gt;6&amp;Sepal.Width&gt;2.5)
-#28 observations now
-iris2&lt;-select(iris1,c(Species,Sepal.Length,Sepal.Width))
-iris3&lt;-arrange(iris2,by=desc(Sepal.Length))
-head(iris3)
-#adding a column more 
+#150 observations of 5 variables</code></pre>
+<p>Exercise 2</p>
+<pre><code>iris1&lt;-filter(iris, Species==c(&quot;virginica&quot;, &quot;versicolor&quot;)&amp;Sepal.Length&gt;6&amp;Sepal.Width&gt;2.5)
+#28 observations now of 5 variables</code></pre>
+<p>Exercise 3</p>
+<pre><code>iris2&lt;-select(iris1,c(Species,Sepal.Length,Sepal.Width))
+#28 observations now of 3 variables </code></pre>
+<p>Exercise 4</p>
+<pre><code>iris3&lt;-arrange(iris2,by=desc(Sepal.Length))
+head(iris3)</code></pre>
+<p>Exercise 5</p>
+<pre><code>#adding a column more 
 iris4&lt;-mutate(iris3,Sepal.Area=Sepal.Length*Sepal.Width)
 print(iris4)
-
-iris5&lt;-summarize(iris4,meanSepal.Length=mean(Sepal.Length, na.rm=TRUE),meanSepal.Width=mean(Sepal.Width, na.rm=TRUE),TotalNumber=n())
-print(iris5)
-
-irisSpecies&lt;-group_by(iris4,Species)
+#28 observations of 4 variables </code></pre>
+<p>Exercise 6</p>
+<pre><code>iris5&lt;-summarize(iris4,meanSepal.Length=mean(Sepal.Length, na.rm=TRUE),meanSepal.Width=mean(Sepal.Width, na.rm=TRUE),TotalNumber=n())
+print(iris5)</code></pre>
+<p>Exercise 7</p>
+<pre><code>irisSpecies&lt;-group_by(iris4,Species)
 iris6&lt;-summarize(irisSpecies, meanSepal.Length=mean(Sepal.Length, na.rm=TRUE),meanSepal.Width=mean(Sepal.Width, na.rm=TRUE),Sample=n())
-print(iris6)
-
-#Using %&gt;%, N. 8
+print(iris6)</code></pre>
+<p>Exercise 8</p>
+<pre><code>#Using %&gt;%
 irisfinal&lt;-iris %&gt;%
 filter(Species==c(&quot;virginica&quot;,&quot;versicolor&quot;),
 Sepal.Length&gt;6,Sepal.Width&gt;2.5)%&gt;% select(Species, Sepal.Width, Sepal.Length) %&gt;% 
@@ -395,9 +403,9 @@ summarise(meanSepal.Length=mean(Sepal.Length),
 meanSepal.Width=mean(Sepal.Width),
 Sample=n())
 print(irisfinal)
-colnames(irisfinal)            
-#last exercise N. 9
-iris_longer &lt;- iris %&gt;% 
+colnames(irisfinal)  </code></pre>
+<p>Exercise 9</p>
+<pre><code>iris_longer &lt;- iris %&gt;% 
 pivot_longer(cols=c(Sepal.Length:Sepal.Width,
 Petal.Length:Petal.Width),
 names_to = &quot;Measure&quot;,
