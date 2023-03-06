@@ -11,9 +11,9 @@
 
 <meta name="author" content="Ilaria Coero Borga" />
 
-<meta name="date" content="2023-01-25" />
+<meta name="date" content="2023-03-06" />
 
-<title>CompBio381</title>
+<title>Homework6</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -356,18 +356,55 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">CompBio381</h1>
+<h1 class="title toc-ignore">Homework6</h1>
 <h4 class="author">Ilaria Coero Borga</h4>
-<h4 class="date">2023-01-25</h4>
+<h4 class="date">2023-03-06</h4>
 
 </div>
 
 
-<p><a href="homework2.html">homework2</a></p>
-<p><a href="homework3.html">homework3</a></p>
-<p><a href="homework4.html">homework4</a></p>
-<p><a href="homework5.html">homework5</a></p>
-<p><a href="homework6.html">homework6</a></p>
+<pre><code>library(tidyverse)
+library(dplyr)
+data(iris)
+class(iris) 
+head(iris)
+iris1&lt;-filter(iris, Species==c(&quot;virginica&quot;, &quot;versicolor&quot;)&amp;Sepal.Length&gt;6&amp;Sepal.Width&gt;2.5)
+#28 observations now
+iris2&lt;-select(iris1,c(Species,Sepal.Length,Sepal.Width))
+iris3&lt;-arrange(iris2,by=desc(Sepal.Length))
+head(iris3)
+#adding a column more 
+iris4&lt;-mutate(iris3,Sepal.Area=Sepal.Length*Sepal.Width)
+print(iris4)
+
+iris5&lt;-summarize(iris4,meanSepal.Length=mean(Sepal.Length, na.rm=TRUE),meanSepal.Width=mean(Sepal.Width, na.rm=TRUE),TotalNumber=n())
+print(iris5)
+
+irisSpecies&lt;-group_by(iris4,Species)
+iris6&lt;-summarize(irisSpecies, meanSepal.Length=mean(Sepal.Length, na.rm=TRUE),meanSepal.Width=mean(Sepal.Width, na.rm=TRUE),Sample=n())
+print(iris6)
+
+#Using %&gt;%, N. 8
+irisfinal&lt;-iris %&gt;%
+filter(Species==c(&quot;virginica&quot;,&quot;versicolor&quot;),
+Sepal.Length&gt;6,Sepal.Width&gt;2.5)%&gt;% select(Species, Sepal.Width, Sepal.Length) %&gt;% 
+arrange(desc(Sepal.Length)) %&gt;% 
+mutate(Sepal.Area=Sepal.Length*Sepal.Width) %&gt;% 
+group_by(Species) %&gt;% 
+summarise(meanSepal.Length=mean(Sepal.Length),
+meanSepal.Width=mean(Sepal.Width),
+Sample=n())
+print(irisfinal)
+colnames(irisfinal)            
+#last exercise N. 9
+iris_longer &lt;- iris %&gt;% 
+pivot_longer(cols=c(Sepal.Length:Sepal.Width,
+Petal.Length:Petal.Width),
+names_to = &quot;Measure&quot;,
+values_to = &quot;Value&quot;)
+print(iris_longer)
+head(iris_longer)
+</code></pre>
 
 
 
