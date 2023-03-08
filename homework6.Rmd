@@ -5,14 +5,18 @@ date: "2023-03-06"
 output: html_document
 ---
 Exercise 1
-```
+```{r}
 library(tidyverse)
 library(dplyr)
 data(iris)
 class(iris) 
 head(iris)
+
 #150 observations of 5 variables
 ``` 
+
+
+
 Exercise 2 
 ```
 iris1<-filter(iris, Species==c("virginica", "versicolor")&Sepal.Length>6&Sepal.Width>2.5)

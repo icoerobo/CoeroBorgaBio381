@@ -3,7 +3,9 @@ library(dplyr)
 data(iris)
 class(iris) 
 head(iris)
-iris1<-filter(iris, Species==c("virginica", "versicolor")&Sepal.Length>6&Sepal.Width>2.5)
+iris1 <- filter(iris,
+Species==c("virginica","versicolor"),
+Sepal.Length > 6.0, Sepal.Width > 2.5)
 #28 observations now
 iris2<-select(iris1,c(Species,Sepal.Length,Sepal.Width))
 iris3<-arrange(iris2,by=desc(Sepal.Length))
