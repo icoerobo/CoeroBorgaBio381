@@ -1,0 +1,51 @@
+---
+title: "Homework9"
+author: "Ilaria Coero Borga"
+date: "2023-03-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("FunctionsHomework9.R")
+#packages required 
+library(ggplot2) # for graphics
+library(MASS)
+library(dplyr)
+library(rlang)
+library(tidyverse)
+
+```
+
+
+```{r, echo=TRUE}
+
+
+#global variables
+z<-PlantGrowth
+```
+
+Pull mean and sd from datasets
+```{r, echo=TRUE}
+df<-gstats(z)
+```
+
+Create a fake dataset
+```{r, echo=TRUE}
+s<-data.frame(value=fakedataset(df$mean[1], df$mean[2], df$mean[3],df$sd[1], df$sd[2], df$sd[3]), Group=rep(c("NewControl","NewTreatm1","NewTreatm2"),each=10))
+```
+
+Run an ANOVA!
+```{r, echo=TRUE}
+aov<-anova(s)
+```
+
+And add a boxplot plus another graph for the final part of the exercise! 
+```{r, echo=TRUE}
+#Plot as a boxplot
+creatingplot(s)
+
+#Plot 2 as an additional modification 
+creatingplot2(s)
+
+```
+
