@@ -21,6 +21,6 @@ output: html_document
 
 [homework8](homework8.html)
 
-[Homework9](Homework9.html)
+[homework9](Homework9.html)
 
-[Homework10](Homework10.html)
+[homework10](Homework10.html)
