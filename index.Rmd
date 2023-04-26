@@ -6,7 +6,6 @@ output: html_document
 ---
 
 
-
 [homework2](homework2.html)
 
 [homework3](homework3.html)
