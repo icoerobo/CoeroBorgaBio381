@@ -36,7 +36,7 @@ creatingplot<-function(s){
 #Additional change for the last part of the homework!
 #A scatterplot instead of a boxplot 
 creatingplot2<-function(s){
-  myplot<-ggplot(data=s, aes(x=Group, y=value))+geom_point()
+  myplot<-ggplot(data=s)+geom_violin(aes(x=Group, y=value, color=Group, fill=Group), alpha=0.35)+xlab("Group")+ylab("Value")
   return(myplot)
 }
 
