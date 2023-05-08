@@ -98,4 +98,4 @@ qplot(data = newdataframe, x = newdataframe$group_2)
 print(vector)
 ```
 How do the distributions of reshuffled means compare to the original means?
-The means appear to be quite different from the previous ones! This is due to the re-shuffle function and the repetition x100. 
+The means appear to be quite different from the previous ones! The previous ones were, in fact: 21.43966 12.99194 and 22.07166. Now we obtained: 17.34487, 17.55166 and 21.60673, the numbers are closer to each others, with less variability! The bigger change is in the Treatment 1 group. This is due to the re-shuffle function and the repetition x100. 
